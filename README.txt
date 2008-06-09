@@ -7,8 +7,8 @@ See http://www.cabel.name/2008/02/fancyzoom-10.html for further details.
 
 The wrapper code of collective.fancyzoom is released under the GPL, but please consider the licence issue of the Fancy Zoom javascript below.
 
-License
-=======
+Fancy Zoom Javascript License
+=============================
 
 FancyZoom is totally free for your non-commercial website.
 
