@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.fancyzoomview">
+
+	<!-- register fancy zoom view for folders -->
+	<browser:page
+        for="Products.ATContentTypes.interface.IATFolder"
+		name="fancy_zoom_view"
+	    class=".fancyzoomview.FancyZoomView"
+	    template="fancyzoomview.pt"
+	    permission="zope2.View"
+	    />
+
+	<!-- register fancy zoom view for topics -->
+	<browser:page
+        for="Products.ATContentTypes.interface.IATTopic"
+		name="fancy_zoom_view"
+	    class=".fancyzoomview.FancyZoomView"
+	    template="fancyzoomview.pt"
+	    permission="zope2.View"
+	    />
+
+    <!-- resource directory for images -->
+    <browser:resourceDirectory
+        name="collective.fancyzoomview.images"
+        directory="images"
+        />
+
+    <!-- resource directory for stylesheets -->
+    <browser:resourceDirectory
+		name="collective.fancyzoomview.javascript"
+        directory="javascript"
+        />
+
+</configure>
+
+
+

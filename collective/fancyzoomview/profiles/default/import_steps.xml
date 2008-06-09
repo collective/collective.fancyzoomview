@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="fancyzoomview-various" version="20080608-01"
+              handler="collective.fancyzoomview.setuphandlers.importVarious"
+              title="Fancy zoom view setup">
+  Fancy zoom view setup
+ </import-step>
+</import-steps>
