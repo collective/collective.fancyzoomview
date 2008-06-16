@@ -6,7 +6,7 @@ version = open(version_file).read().strip()
 
 setup(name='collective.fancyzoomview',
       version=version,
-      description="",
+      description="Smooth javascript image zooming for Plone folders and topics.",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
