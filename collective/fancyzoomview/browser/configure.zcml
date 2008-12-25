@@ -21,13 +21,22 @@
 	    permission="zope2.View"
 	    />
 
+	<!-- overwrite the standard view for news items -->
+	<browser:page
+        for="Products.ATContentTypes.interface.IATNewsItem"
+		name="view"
+	    class=".fancyzoomview.FancyZoomNewsItemView"
+	    template="newsitem_view.pt"
+	    permission="zope2.View"
+	    />
+
     <!-- resource directory for images -->
     <browser:resourceDirectory
         name="collective.fancyzoomview.images"
         directory="images"
         />
 
-    <!-- resource directory for stylesheets -->
+    <!-- resource directory for javascript -->
     <browser:resourceDirectory
 		name="collective.fancyzoomview.javascript"
         directory="javascript"

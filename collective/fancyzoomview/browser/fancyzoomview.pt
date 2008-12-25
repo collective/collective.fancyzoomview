@@ -5,12 +5,13 @@
 
 <metal:javascript fill-slot="javascript_head_slot">
     <script type="text/javascript"
-            tal:attributes="src string:${context/++resource++collective.fancyzoomview.javascript/FancyZoom.js};"></script>
-    <script type="text/javascript"
-            tal:attributes="src string:${context/++resource++collective.fancyzoomview.javascript/FancyZoomHTML.js};"></script>
-    <script type="text/javascript">
-      window.onload = setupZoom;
-    </script>
+            tal:attributes="src string:${context/++resource++collective.fancyzoomview.javascript/fancyzoom.js};"></script>
+	<script type="text/javascript" charset="utf-8">
+		jq(document).ready(function() {
+			jq('div.photoAlbumEntry a').fancyZoom({width:600, height:400, scaleImg: true, closeOnClick: true})
+			jq('div.photo a').fancyZoom({scaleImg: true, closeOnClick: true})
+		});
+	</script>
 </metal:javascript>
 
 <body>
@@ -54,17 +55,21 @@
     <tal:albumsimages tal:condition="python:albums or images">
         <tal:images tal:condition="batch" tal:repeat="image batch">
             <div class="photoAlbumEntry">
-                        <a tal:define="id python:int(b_start)+int(repeat['image'].number()-1)"
-                           tal:attributes="href string:${image/absolute_url};
-                                           title image/Description">
-                            <span class="photoAlbumEntryWrapper">
-                            <img src="" alt="" tal:replace="structure python:image.tag(scale='thumb', title=image.Description())" />
-                            </span>
+                <a tal:define="id python:int(b_start)+int(repeat['image'].number()-1)"
+                   tal:attributes="href string:#image${repeat/image/number};
+                                   title image/Description">
+                    <span class="photoAlbumEntryWrapper">
+                        <img src="" alt="" tal:replace="structure python:image.tag(scale='thumb', title=image.Description())" />
+                    </span>
                     <span class="photoAlbumEntryTitle" tal:content="image/pretty_title_or_id">
                        Title
                     </span>
-                        </a>
+                </a>
             </div>
+            <div id="" tal:attributes="id string:image${repeat/image/number}">
+        		<img src="" alt="" tal:replace="structure python:image.tag(scale='large', title=image.Description())" />
+      		</div>
+
         </tal:images>
 
         <div class="photoAlbum" tal:condition="albums">
