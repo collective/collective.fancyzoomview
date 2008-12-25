@@ -22,6 +22,7 @@
 	    />
 
 	<!-- overwrite the standard view for news items -->
+	<!--
 	<browser:page
         for="Products.ATContentTypes.interface.IATNewsItem"
 		name="view"
@@ -29,6 +30,7 @@
 	    template="newsitem_view.pt"
 	    permission="zope2.View"
 	    />
+    -->
 
     <!-- resource directory for images -->
     <browser:resourceDirectory
