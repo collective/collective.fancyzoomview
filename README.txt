@@ -29,7 +29,7 @@ Add the following code to your buildout.cfg::
       collective.fancyzoomview
   ...
 
-If you also want Fancy Zoom for News Items add the following code to your buildout.cfg::
+If you also want Fancy Zoom for Plone News Items add the following code to your buildout.cfg::
 
   [buildout]
   ...

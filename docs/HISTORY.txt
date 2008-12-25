@@ -3,12 +3,12 @@ Changelog
 0.4 (2008/12/25)
 ----------------
 
-* Fancy Zoom view added to News Item
+* Fancy Zoom view for News Items added
 
 0.3 (2008/12/25)
 ----------------
 
-* Switch from Cabel Strasser's fancy zoom view javascript to Steve Smith's jquery based javascript
+* Switch to jQuery
 
 0.2 (2008/06/09)
 ----------------
