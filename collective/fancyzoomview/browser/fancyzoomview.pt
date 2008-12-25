@@ -8,8 +8,7 @@
             tal:attributes="src string:${context/++resource++collective.fancyzoomview.javascript/fancyzoom.js};"></script>
 	<script type="text/javascript" charset="utf-8">
 		jq(document).ready(function() {
-			jq('div.photoAlbumEntry a').fancyZoom({width:600, height:400, scaleImg: true, closeOnClick: true})
-			jq('div.photo a').fancyZoom({scaleImg: true, closeOnClick: true})
+			jq('div.photoAlbumEntry a').fancyZoom({closeOnClick: true})
 		});
 	</script>
 </metal:javascript>
