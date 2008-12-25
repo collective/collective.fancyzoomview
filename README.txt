@@ -1,7 +1,7 @@
 Introduction
 ============
 
-collective.fancyzoom provides smooth Javascript image zooming for Plone folders and topics loosely based on Cabel Maxfield Sasser's `Fancy Zoom`.
+collective.fancyzoomview provides smooth Javascript image zooming for Plone folders and topics loosely based on Cabel Maxfield Sasser's `Fancy Zoom`.
 
 .. _`Fancy Zoom`: http://www.cabel.name/2008/02/fancyzoom-10.html
 
