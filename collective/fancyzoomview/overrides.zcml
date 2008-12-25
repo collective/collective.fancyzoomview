@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone">
+
+	<!-- override the standard view for news items -->
+	<browser:page
+        for="Products.ATContentTypes.interface.IATNewsItem"
+		name="newsitem_view"
+	    class=".browser.views.FancyZoomNewsItemView"
+	    template="browser/newsitem_view.pt"
+	    permission="zope2.View"
+	    />
+
+</configure>
+
+
