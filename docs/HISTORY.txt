@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.3 (2008/12/25)
+----------------
+
+* Switch from Cabel Strasser's fancy zoom view javascript to Steve Smith's jquery based javascript
+
 0.2 (2008/06/09)
 ----------------
 
