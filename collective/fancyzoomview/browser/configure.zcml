@@ -7,7 +7,7 @@
 	<browser:page
         for="Products.ATContentTypes.interface.IATFolder"
 		name="fancy_zoom_view"
-	    class=".fancyzoomview.FancyZoomView"
+	    class=".views.FancyZoomView"
 	    template="fancyzoomview.pt"
 	    permission="zope2.View"
 	    />
@@ -16,7 +16,7 @@
 	<browser:page
         for="Products.ATContentTypes.interface.IATTopic"
 		name="fancy_zoom_view"
-	    class=".fancyzoomview.FancyZoomView"
+	    class=".views.FancyZoomView"
 	    template="fancyzoomview.pt"
 	    permission="zope2.View"
 	    />
@@ -25,12 +25,12 @@
 	<!--
 	<browser:page
         for="Products.ATContentTypes.interface.IATNewsItem"
-		name="view"
-	    class=".fancyzoomview.FancyZoomNewsItemView"
+		name="newsitem_view"
+	    class=".views.FancyZoomNewsItemView"
 	    template="newsitem_view.pt"
 	    permission="zope2.View"
 	    />
-    -->
+	-->
 
     <!-- resource directory for images -->
     <browser:resourceDirectory
@@ -45,6 +45,3 @@
         />
 
 </configure>
-
-
-
