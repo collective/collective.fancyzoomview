@@ -5,6 +5,17 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
+
+<metal:javascript fill-slot="javascript_head_slot">
+    <script type="text/javascript"
+            tal:attributes="src string:${context/++resource++collective.fancyzoomview.javascript/fancyzoom.js};"></script>
+	<script type="text/javascript" charset="utf-8">
+		jq(document).ready(function() {
+			jq('div.newsImageContainer a').fancyZoom({closeOnClick: true})
+		});
+	</script>
+</metal:javascript>
+
 <body>
 
 <div metal:fill-slot="main">
@@ -36,7 +47,7 @@
         <div class="newsImageContainer"
              tal:condition="here/image_mini|nothing">
             <a href="#"
-               tal:attributes="href string:$here_url/image/image_view_fullscreen"
+               tal:attributes="href string:#news_item_image;"
                id="parent-fieldname-image">
                <img tal:replace="structure python: here.tag(scale='mini', css_class='newsImage')" src="" alt="" />
             </a>
@@ -46,6 +57,10 @@
               </metal:field>
             </p>
         </div>
+
+        <div id="" tal:attributes="id string:news_item_image">
+        	<img tal:replace="structure python: here.tag(scale='large', css_class='newsImage')" src="" alt="" />
+      	</div>
 
         <p tal:condition="python: not len_text and is_editable"
            i18n:translate="no_body_text"
