@@ -73,11 +73,8 @@
              tal:define="kss_class python:getKssClasses('text',
                          templateId=templateId, macro='text-field-view');
                          text text|here/getText|nothing"
-             tal:condition="text">
-        <!-- RETURNS ERROR: "NameError: name 'test' is not defined"
-             tal:attributes="class python:test(here.Format() in ('text/structured',
-                                                   'text/x-rst', ), 'stx' + kss_class, 'plain' + kss_class)">
-        -->
+             tal:condition="text"
+             tal:attributes="class python: here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' + kss_class or 'plain' + kss_class">
             <div metal:define-slot="inside" tal:replace="structure text">The body</div>
         </div>
 
