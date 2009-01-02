@@ -4,7 +4,7 @@
 
 This package contains additional views for the Plone content types folder,
 topic and news item. In this testbrowser doctest, we will demonstrate how
-the content types interact. See tests.py for how it is set up.
+the content types work. See test/test_doctest.py for how it is set up.
 
 Setting up and logging in
 -------------------------
@@ -98,3 +98,38 @@ Verify that fancy zoom view is available for folders:
     >>> browser.open(fancy_folder_url)
     >>> browser.getLink(id='fancy_zoom_view').url.endswith("selectViewTemplate?templateId=fancy_zoom_view")
     True
+
+Adding a topic with fancy image zooming
+---------------------------------------
+
+    >>> browser.open(portal_url)
+    >>> browser.getLink(id='topic').click()
+    >>> browser.getControl(name='title').value = "Fancy Topic"
+    >>> browser.getControl(name='description').value = "Topic with fancy zooming images."
+    >>> browser.getControl(name='text').value = "This is a topic with <em>fancy zooming</em> images."
+    >>> browser.getControl(name='form_submit').click()
+
+Verify that fancy zoom view is available for topics:
+
+    >>> browser.open(fancy_folder_url)
+    >>> browser.getLink(id='fancy_zoom_view').url.endswith("selectViewTemplate?templateId=fancy_zoom_view")
+    True
+
+Adding a News Item with fancy image zooming
+-------------------------------------------
+
+There should be an object called 'news' in the portal root.
+
+    >>> 'news' in self.portal.objectIds()
+    True
+    >>> news = self.portal['news']
+    >>> news_url = news.absolute_url()
+
+Adding a news item with an image:
+
+    >>> browser.open(news_url)
+    >>> browser.getLink(id='news-item').click()
+    >>> browser.getControl(name='title').value = "Fancy News Item"
+    >>> browser.getControl(name='description').value = "News Item with fancy image zooming."
+    >>> browser.getControl(name='image_file').mech_control.add_file(dummy_image1, filename='dummy1.png')
+    >>> browser.getControl(name='form_submit').click()
