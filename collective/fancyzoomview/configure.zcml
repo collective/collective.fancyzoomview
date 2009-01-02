@@ -12,7 +12,7 @@
 		name="default"
         title="Fancy Zoom View"
         directory="profiles/default"
-        description="Fancy zoom view for folders and topics"
+        description="Fancy image zooming for folders and topics"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
