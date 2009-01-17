@@ -21,6 +21,17 @@
 	    permission="zope2.View"
 	    />
 
+	<!-- display a nice title instead of fancy_zoom_view -->
+    <browser:menuItems
+        for="*"
+        menu="plone_displayviews">
+        <browser:menuItem
+            title="Fancy Zoom View"
+            action="fancy_zoom_view"
+            description="A view with fancy image zooming."
+            />
+    </browser:menuItems>
+
     <!-- resource directory for images -->
     <browser:resourceDirectory
         name="collective.fancyzoomview.images"
