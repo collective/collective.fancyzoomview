@@ -3,6 +3,9 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.fancyzoomview">
 
+	<!-- required for plone_displayviews -->
+    <include package="plone.app.contentmenu" />
+
 	<!-- register fancy zoom view for folders -->
 	<browser:page
         for="Products.ATContentTypes.interface.IATFolder"
