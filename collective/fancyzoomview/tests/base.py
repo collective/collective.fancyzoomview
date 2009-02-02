@@ -7,7 +7,7 @@ from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import onsetup
 
 @onsetup
-def setup_collecitve_fancyzoomview():
+def setup_collective_fancyzoomview():
     """Set up the collective fancy zoom package
 
     The @onsetup decorator causes the execution of this body to be deferred
@@ -32,7 +32,7 @@ def setup_collecitve_fancyzoomview():
 # installs the products we need for the Optilux package. Then, we let
 # PloneTestCase set up this product on installation.
 
-setup_collecitve_fancyzoomview()
+setup_collective_fancyzoomview()
 ptc.setupPloneSite(products=['collective.fancyzoomview'])
 
 class FancyZoomViewTestCase(ptc.PloneTestCase):
