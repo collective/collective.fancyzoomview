@@ -1,8 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version_file = os.path.join('collective', 'fancyzoomview', 'version.txt')
-version = open(version_file).read().strip()
+version = '1.0'
 
 setup(name='collective.fancyzoomview',
       version=version,
