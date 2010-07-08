@@ -3,7 +3,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
-      metal:use-macro="here/main_template/macros/master"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 
 <metal:javascript fill-slot="javascript_head_slot">
@@ -62,7 +62,8 @@
         	<img tal:replace="structure python: here.tag(scale='large', css_class='newsImage')" src="" alt="" />
       	</div>
 
-        <p tal:condition="python: not len_text and is_editable"
+        <p tal:define="is_editable is_editable | context/@@plone_context_state/is_editable"
+           tal:condition="python: not len_text and is_editable"
            i18n:translate="no_body_text"
            class="discreet">
             This item does not have any body text, click the edit tab to change it.
