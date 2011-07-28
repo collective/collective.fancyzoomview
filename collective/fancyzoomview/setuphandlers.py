@@ -1,5 +1,4 @@
 from Products.CMFCore.utils import getToolByName
-from Products.CMFEditions.setuphandlers import DEFAULT_POLICIES
 
 def setupView(portal, out):
     """ Add fancy zoom view to folder type """
